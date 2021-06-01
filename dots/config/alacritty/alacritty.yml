@@ -1,0 +1,78 @@
+window:
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 10 
+    y: 10
+
+scrolling:
+  # Specifying '0' will disable scrolling.
+  history: 100000
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+
+background_opacity: 0.8
+
+# Colors (Dracula)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#282a36'
+#     foreground: '#f8f8f2'
+
+#   # Normal colors
+#   normal:
+#     black:   '#000000'
+#     red:     '#ff5555'
+#     green:   '#50fa7b'
+#     yellow:  '#f1fa8c'
+#     blue:    '#3c2cd1'
+#     magenta: '#ff79c6'
+#     cyan:    '#8be9fd'
+#     white:   '#bfbfbf'
+
+#   # Bright colors
+#   bright:
+#     black:   '#575b70'
+#     red:     '#ff6e67'
+#     green:   '#5af78e'
+#     yellow:  '#f4f99d'
+#     blue:    '#3c2cd1'
+#     magenta: '#ff92d0'
+#     cyan:    '#9aedfe'
+#     white:   '#e6e6e6'
+
+TERM: xterm-256color 
+font:
+  normal:
+      #    family: MesloLGS NF
+    family: FiraCode Nerd Font 
+    style: Regular
+  bold:
+    family: MesloLGS NF
+    style: Bold
+  italic:
+    family: MesloLGS NF
+    style: Italic
+  bold_italic:
+    family: MesloLGS NF
+    style: Bold Italic  
+  size: 10
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+  mouse:
+  url:
+    launcher:
+      # This depends on your OS, on Mac it’s `open`
+      program: open
+    modifiers: Command
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login

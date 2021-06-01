@@ -1,0 +1,13 @@
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "xx"
+now_playing_prefix = "$b$2 >"
+now_playing_suffix = "$8$/b"
+mpd_music_dir = "/home/sophos/a1o/a1o"
+execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
+playlist_display_mode="classic"
+song_list_format = "$6{%a »$4 %t$/r$R}|{%f}"
+song_columns_list_format = "(20)[6]{a} (40)[4]{t} (5)[2]{l}"
+user_interface = alternative 

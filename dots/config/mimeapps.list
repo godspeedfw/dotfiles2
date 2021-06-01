@@ -1,0 +1,12 @@
+[Added Associations]
+application/pdf=mupdf.desktop;
+font/ttf=gvim.desktop;
+application/octet-stream=emacs.desktop;
+
+[Default Applications]
+inode/directory=pcmanfm.desktop
+application/pdf=okular.desktop
+application/mp3=vlc.desktop
+application/music=vlc.desktop
+application/epub=okular.desktop
+x-scheme-handler/discord-668477264995811338=nuclear.desktop
