@@ -7,8 +7,8 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 home_files=$(ls ./dots/home/)
 config_files=$(ls ./dots/config/)
 mkdir $olddir
-mkdir $oldir/home
-mkdir $oldir/config
+mkdir $olddir/home
+mkdir $olddir/config
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $home_files; do
