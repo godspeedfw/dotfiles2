@@ -26,3 +26,8 @@ for file in $config_files; do
     echo "Creating symlink to $file in .config directory."
     ln --verbose -s $current_dir/dots/config/$file ~/.config/$file
 done
+
+os_name=$(grep '^NAME=' /etc/os-release | grep -o '".*"' | tr -d '"')
+if [ $os_name = "void" ] ; then
+	/bin/bash ./scripts/no_bitmap.sh
+fi
