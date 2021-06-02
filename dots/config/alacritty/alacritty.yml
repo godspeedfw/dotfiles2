@@ -48,16 +48,16 @@ TERM: xterm-256color
 font:
   normal:
       #    family: MesloLGS NF
-    family: FiraCode Nerd Font 
+    family: Fira Code
     style: Regular
   bold:
-    family: MesloLGS NF
+    family: Fira Code
     style: Bold
   italic:
-    family: MesloLGS NF
+    family: Fira Code 
     style: Italic
   bold_italic:
-    family: MesloLGS NF
+    family: Fira Code
     style: Bold Italic  
   size: 10
 selection:
