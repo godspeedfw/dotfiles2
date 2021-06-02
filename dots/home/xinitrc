@@ -1,7 +1,7 @@
 export QT_QPA_PLATFORMTHEME=gtk2
 
 picom --experimental-backends --blur-method dual_kawase &
-wal -i ~/walls/ &
+wal -i ~/dotfiles2/walls/ &
 xbindkeys &
 xinput --set-prop 12 'libinput Accel Speed' -0.7 &
 dunst &
