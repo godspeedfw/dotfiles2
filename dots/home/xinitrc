@@ -1,5 +1,4 @@
 export QT_QPA_PLATFORMTHEME=gtk2
-
 picom --experimental-backends --blur-method dual_kawase &
 wal -i ~/dotfiles2/walls/ &
 xbindkeys &
