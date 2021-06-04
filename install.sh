@@ -28,6 +28,14 @@ for file in $config_files; do
 done
 
 os_name=$(grep '^NAME=' /etc/os-release | grep -o '".*"' | tr -d '"')
-if [ $os_name = "void" ] ; then
+if [[ $os_name = "void" ]] ; then
 	/bin/bash ./scripts/no_bitmap.sh
 fi
+
+
+if [[ -d $HOME/.local/bin ]]; then
+    cp -r ./scripts/* $HOME/.local/bin
+else
+    mkdir $HOME/.local/bin && cp -r ./bin/* $HOME/.local/bin
+fi
+
