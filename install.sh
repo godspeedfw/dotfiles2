@@ -19,16 +19,29 @@ mkdir $olddir
 #     echo $(pwd)
 # done
 
-for file in $dotfiles; do
-    echo "Moving any existing dotfiles from .config dir ~ to $olddir/config"
-    mv --verbose ~/.config/$file ~/dotfiles_old/home
-    echo "Creating symlink to $file in .config directory."
-    ln --verbose -s $current_dir/dots/config/$file ~/.config/$file
-done
-
 mv ~/.zshrc $olddir/ 
 mv ~/.xinitrc $olddir/ 
 mv ~/.xbindkeysrc $olddir/
+
+# for all dotfiles except xorg, zsh
+for file in $dotfiles; do
+    if [[ $file != "zsh" || $file != "xorg" ]]
+    then
+      echo "Moving any existing dotfiles from .config dir ~ to $olddir/config"
+      mv --verbose ~/.config/$file ~/dotfiles_old/home
+      echo "Creating symlink to $file in .config directory."
+      ln --verbose -s $current_dir/dots/config/$file ~/.config/$file
+    fi 
+done
+
+# for xorg and zsh
+for file in $(ls pwd/dotfiles/xorg/); do
+  ln --verbose -s $file ~/
+done
+
+for file in $(ls pwd/dotfiles/zsh/); do
+  ln --verbose -s $file ~/
+done
 
 os_name=$(grep '^NAME=' /etc/os-release | grep -o '".*"' | tr -d '"')
 if [[ $os_name = "void" ]] ; then
