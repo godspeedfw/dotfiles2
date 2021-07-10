@@ -36,12 +36,13 @@ done
 
 # for xorg and zsh
 for file in $(ls pwd/dotfiles/xorg/); do
-  ln --verbose -s $file ~/
+  ln --verbose -s $file ~/.$file
 done
 
 for file in $(ls pwd/dotfiles/zsh/); do
-  ln --verbose -s $file ~/
+  ln --verbose -s $file ~/.$file
 done
+
 
 os_name=$(grep '^NAME=' /etc/os-release | grep -o '".*"' | tr -d '"')
 if [[ $os_name = "void" ]] ; then
