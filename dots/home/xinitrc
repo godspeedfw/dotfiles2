@@ -1,13 +1,19 @@
-export QT_QPA_PLATFORMTHEME=gtk2
-picom --experimental-backends --blur-method dual_kawase &
-wal -i ~/dotfiles2/walls/ &
+#!/bin/sh
+# export QT_QPA_PLATFORMTHEME=gtk3
+export QT_STYLE_OVERRIDE=GTK+
+# picom --experimental-backends --blur-method dual_kawase &
+xrdb ~/.Xresources
+#wal -i ~/git/walls/fightclub.jpeg &
+nitrogen --restore &
 xbindkeys &
 xinput --set-prop 12 'libinput Accel Speed' -0.7 &
-dunst &
+dunst -conf ~/.cache/wal/dunstrc &
 qbittorrent &
 flameshot &
+[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
 mpd &
 mpDris2 &
 slstatus &
 nm-applet &
-exec dwm
+volctl &
+exec dwm 2> ~/dwm.log
