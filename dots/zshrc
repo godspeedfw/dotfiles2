@@ -82,6 +82,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-vi-mode
+    history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,5 +118,8 @@ export LANG=en_US.UTF-8
 # Created by `pipx` on 2021-05-12 07:28:13
 export PATH="$PATH:/home/sophos/.local/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+ 
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
