@@ -1,7 +1,0 @@
-auto-reload yes
-highlight feedlist "---.*---" white default bold
-highlight feedlist ".*0/0.." default default invis
-browser "firefox %u"
-notify-always yes
-reload-time 60
-notify-program "~/volume-notification-dunst/notify-send.sh :RSS"
