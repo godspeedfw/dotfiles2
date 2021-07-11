@@ -51,13 +51,16 @@ install_yay () {
 install_apps () {
   install_cmd "firefox"
   install_cmd "vlc mpv cava ncmpcpp"  # multimedia
-  install_cmd "dunst pcmanfm lxappearance newsboat android"  # utilities
+  install_cmd "htop dunst pcmanfm lxappearance newsboat android"  # utilities
 
   if [[ $os_name = "Arch Linux"]]; then
-    install_cmd "sublime-text-4 android-file-transfer android-tools"
+    install_cmd "vscodium-bin sublime-text-4 android-file-transfer android-tools"
   elif [[ $os_name = "void" ]]; then
-    install_cmd "sublime-text4 android-file-transfer-linux android-tools"
-}       # dev stuff
+    install_cmd "vscode sublime-text4 android-file-transfer-linux android-tools"   # dev stuff
+  fi
+
+  install_cmd "dhcpcd iwd NetworkManager network-manager-applet"
+}       
 
 
 #######
@@ -68,4 +71,5 @@ install_xorg
 install_ohmyzsh
 install_audio
 install_dwm
+install_apps
 
