@@ -61,7 +61,7 @@ install_apps () {
 
 
 #######
-if [[ $os_name = "Arch Linux" ]];  then
+if [[ $os_name = "Arch Linux" ]]; then
    install_yay 
 fi
 install_xorg
