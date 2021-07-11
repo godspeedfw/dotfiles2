@@ -1,3 +1,3 @@
-# Dotfiles2
+# Dotfiles2 (WIP)
 
-These (shoudwork for A
+These (shoud) work for Arch Linux and Void Linux
