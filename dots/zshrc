@@ -78,10 +78,10 @@ alias update='sudo pacman -Syu' --noconfirm
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    vi-mode
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-vi-mode
     history-substring-search
 )
 
@@ -118,8 +118,23 @@ export LANG=en_US.UTF-8
 # Created by `pipx` on 2021-05-12 07:28:13
 export PATH="$PATH:/home/sophos/.local/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
- 
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+VI_MODE_SET_CURSOR=true
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+bindkey "^[OA" history-substring-search-up
+bindkey "^[OB" history-substring-search-down
+
+bindkey "^P" up-line-or-history
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[[5~" up-line-or-history
+bindkey "^[[A" up-line-or-history
+bindkey "^N" down-line-or-history
+bindkey "^[OB" down-line-or-beginning-search
+bindkey "^[[6~" down-line-or-history
+bindkey "^[[B" down-line-or-history
+
+# bindkey -M "jk" vi-movement-mode
+bindkey -M viins 'jk' vi-cmd-mode
