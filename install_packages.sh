@@ -14,6 +14,7 @@ install_cmd () {
 install_ohmyzsh () {
   install_cmd "zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  chsh -s /bin/zsh
 }
 
 # install x and x related stuff
