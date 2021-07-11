@@ -53,6 +53,7 @@ install_apps () {
   install_cmd "vlc mpv cava ncmpcpp"  # multimedia
   install_cmd "htop dunst pcmanfm lxappearance newsboat android"  # utilities
 
+<<<<<<< HEAD
   if [[ $os_name = "Arch Linux"]]; then
     install_cmd "vscodium-bin sublime-text-4 android-file-transfer android-tools"
   elif [[ $os_name = "void" ]]; then
@@ -61,10 +62,18 @@ install_apps () {
 
   install_cmd "dhcpcd iwd NetworkManager network-manager-applet"
 }       
+=======
+  if [[ $os_name = "Arch Linux" ]]; then
+    install_cmd "sublime-text-4 android-file-transfer android-tools"
+  elif [[ $os_name = "void" ]]; then
+    install_cmd "sublime-text4 android-file-transfer-linux android-tools"
+  fi
+}       # dev stuff
+>>>>>>> 880b9b4b9fc6fbbcd83c10daff0f1e208b9d295d
 
 
 #######
-if [[ $os_name = "Arch Linux" ]];  then
+if [[ $os_name = "Arch Linux" ]]; then
    install_yay 
 fi
 install_xorg
