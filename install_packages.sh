@@ -57,6 +57,7 @@ install_apps () {
     install_cmd "sublime-text-4 android-file-transfer android-tools"
   elif [[ $os_name = "void" ]]; then
     install_cmd "sublime-text4 android-file-transfer-linux android-tools"
+  fi
 }       # dev stuff
 
 
