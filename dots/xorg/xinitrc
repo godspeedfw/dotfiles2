@@ -10,7 +10,7 @@ xinput --set-prop 12 'libinput Accel Speed' -0.7 &
 dunst -conf ~/.cache/wal/dunstrc &
 qbittorrent &
 flameshot &
-[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
+mpdas &
 mpd &
 mpDris2 &
 slstatus &
