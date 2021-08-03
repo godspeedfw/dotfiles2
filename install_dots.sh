@@ -45,10 +45,15 @@ if [[ $os_name = "void" ]] ; then
 	/bin/bash ./scripts/no_bitmap.sh
 fi
 
-
+# user scripts
 if [[ -d $HOME/.local/bin ]]; then
     cp -r ./scripts/* $HOME/.local/bin
 else
     mkdir $HOME/.local/bin && cp -r ./bin/* $HOME/.local/bin
 fi
 
+
+# sublime text configuration
+if [[ -d $HOME/.config/sublime-text-3/Packages ]]; then
+  rm -rf $HOME/.config/sublime-text-3/Packages/User
+  ln --verbose -s $current_dir/dots/sublime-text-3/User $HOME/.config/sublime-text-3/Packages/

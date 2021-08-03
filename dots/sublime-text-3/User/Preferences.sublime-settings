@@ -1,0 +1,11 @@
+{
+	"font_face": "jetbrainsmono nerd font",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Adaptive.sublime-theme",
+	"color_scheme": "Packages/One Half Color Schemes/OneHalfDark.tmTheme",
+	"font_size": 12,
+	
+}
