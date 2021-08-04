@@ -1,6 +1,8 @@
 #!/bin/sh
 # export QT_QPA_PLATFORMTHEME=gtk3
 export QT_STYLE_OVERRIDE=GTK+
+export gtk-application-prefer-dark-theme = true
+export _JAVA_AWT_WM_NONREPARENTING=1
 # picom --experimental-backends --blur-method dual_kawase &
 xrdb ~/.Xresources
 #wal -i ~/git/walls/fightclub.jpeg &
@@ -8,7 +10,7 @@ nitrogen --restore &
 xbindkeys &
 xinput --set-prop 12 'libinput Accel Speed' -0.7 &
 dunst -conf ~/.cache/wal/dunstrc &
-qbittorrent &
+# qbittorrent &
 flameshot &
 mpdas &
 mpd &
