@@ -1,5 +1,6 @@
 #!/bin/sh
 # export QT_QPA_PLATFORMTHEME=gtk3
+export PATH="${PATH}:${HOME}/.local/bin"
 export QT_STYLE_OVERRIDE=GTK+
 export gtk-application-prefer-dark-theme = true
 export _JAVA_AWT_WM_NONREPARENTING=1
