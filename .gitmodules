@@ -1,4 +1,7 @@
 [submodule "dwm-flexipatch"]
 	path = dwm-flexipatch
-	url = https://github.com/godspeed-x/dwm-flexipatch/
+	url = https://github.com/godspeedfw/dwm-flexipatch/
 	branch = master
+[submodule "st-flexipatch"]
+	path = st-flexipatch
+	url = https://github.com/godspeedfw/st-flexipatch/
