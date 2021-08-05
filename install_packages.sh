@@ -10,6 +10,13 @@ install_cmd () {
   fi
 }
 
+# add new user
+add_user () {
+  read -p "Enter username: " username
+  sudo user add $username
+  sudo passwd $username  
+}
+
 # install zsh and ohmyzsh
 install_ohmyzsh () {
   install_cmd "zsh"
@@ -37,6 +44,12 @@ install_audio () {
 # install dwm
 install_dwm () {
   cd $PWD/dwm-flexipatch
+  sudo make clean install
+}
+
+# install st 
+install_st () {
+  cd $PWD/st-flexipatch
   sudo make clean install
 }
 
