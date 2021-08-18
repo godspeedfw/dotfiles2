@@ -21,6 +21,7 @@ mkdir $olddir
 
 mv ~/.zshrc $olddir/ 
 mv ~/.xinitrc $olddir/ 
+mv ~/.Xresources $olddir/ 
 mv ~/.xbindkeysrc $olddir/
 
 # for all dotfiles except xorg, zsh
@@ -35,8 +36,19 @@ for file in $dotfiles; do
 done
 
 # for xorg and zsh
-for file in $(ls pwd/dotfiles/xorg/); do
-  ln --verbose -s $file ~/.$file
+for file in $(ls $(pwd)/dots/xorg/); do
+  if [[ "$file" != "xresources"* ]]  
+  then
+    ln --verbose -s $file ~/.$file
+  else
+	  for file in $(ls $(pwd)/dots/xorg/xresources); do
+		  echo "Use $file ?[y/n]"
+		  read ch
+		  if [[ "$ch" == "y" ]]; then
+			  ln --verbose -s $current_dir/dots/xorg/xresources/$file ~/.Xresources
+		  fi
+	  done
+  fi
 done
 ln -s $current_dir/dots/zshrc ~/.zshrc
 
