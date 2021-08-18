@@ -39,7 +39,7 @@ done
 for file in $(ls $(pwd)/dots/xorg/); do
   if [[ "$file" != "xresources"* ]]  
   then
-    ln --verbose -s $file ~/.$file
+    ln --verbose -s $current_dir/dots/xorg/$file ~/.$file
   else
 	  for file in $(ls $(pwd)/dots/xorg/xresources); do
 		  echo "Use $file ?[y/n]"
@@ -52,6 +52,7 @@ for file in $(ls $(pwd)/dots/xorg/); do
 done
 ln -s $current_dir/dots/zshrc ~/.zshrc
 
+# fix bitmap fonts (FOR VOID LINUX ONLY)
 os_name=$(grep '^NAME=' /etc/os-release | grep -o '".*"' | tr -d '"')
 if [[ $os_name = "void" ]] ; then
 	/bin/bash ./scripts/no_bitmap.sh
@@ -69,3 +70,4 @@ fi
 if [[ -d $HOME/.config/sublime-text-3/Packages ]]; then
   rm -rf $HOME/.config/sublime-text-3/Packages/User
   ln --verbose -s $current_dir/dots/sublime-text-3/User $HOME/.config/sublime-text-3/Packages/
+fi
