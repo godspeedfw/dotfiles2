@@ -2,9 +2,14 @@
 	path = dwm-flexipatch
 	url = https://github.com/godspeedfw/dwm-flexipatch/
 	branch = master
+        update = merge
 [submodule "st-flexipatch"]
 	path = st-flexipatch
 	url = https://github.com/godspeedfw/st-flexipatch/
+	branch = master
+	update = merge
 [submodule "dmenu-flexipatch"]
 	path = dmenu-flexipatch
 	url = https://github.com/godspeedfw/dmenu-flexipatch/
+	branch = master
+	update = merge
