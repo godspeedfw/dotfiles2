@@ -3,7 +3,8 @@
 export LC_ALL="en_US.UTF-8"
 export PATH="${PATH}:${HOME}/.local/bin"
 export QT_STYLE_OVERRIDE=GTK+
-export gtk-application-prefer-dark-theme = true
+# export gtk-application-prefer-dark-theme = true
+export _GTK_THEME_VARIANT=dark
 export _JAVA_AWT_WM_NONREPARENTING=1
 # picom --experimental-backends --blur-method dual_kawase &
 xrdb ~/.Xresources
