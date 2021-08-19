@@ -8,16 +8,7 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 dotfiles=$(ls ./dots/)
 echo $dotfiles
 mkdir $olddir
-# mkdir $olddir/config
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-# for file in $home_files; do
-#     echo "Moving any existing dotfiles in home dir from ~ to $olddir/home"
-#     mv --verbose ~/.$file ~/dotfiles_old/home
-#     echo "Creating symlink to $file in home directory."
-#     ln --verbose -s $current_dir/dots/home/$file ~/.$file
-#     echo $(pwd)
-# done
+ done
 
 mv ~/.zshrc $olddir/ 
 mv ~/.xinitrc $olddir/ 
@@ -35,22 +26,24 @@ for file in $dotfiles; do
     fi 
 done
 
-# for xorg and zsh
+
+# for xorg stuff and zsh
 for file in $(ls $(pwd)/dots/xorg/); do
   if [[ "$file" != "xresources"* ]]  
   then
     ln --verbose -s $current_dir/dots/xorg/$file ~/.$file
   else
-	  for file in $(ls $(pwd)/dots/xorg/xresources); do
-		  echo "Use $file ?[y/n]"
-		  read ch
-		  if [[ "$ch" == "y" ]]; then
-			  ln --verbose -s $current_dir/dots/xorg/xresources/$file ~/.Xresources
-		  fi
-	  done
+    for file in $(ls $(pwd)/dots/xorg/xresources); do     # ask for what xresoures user wants(multiple colorschemes)
+      echo "Use $file ?[y/n]"
+      read ch
+      if [[ "$ch" == "y" ]]; then
+        ln --verbose -s $current_dir/dots/xorg/xresources/$file ~/.Xresources
+      fi
+    done
   fi
 done
 ln -s $current_dir/dots/zshrc ~/.zshrc
+
 
 # fix bitmap fonts (FOR VOID LINUX ONLY)
 os_name=$(grep '^NAME=' /etc/os-release | grep -o '".*"' | tr -d '"')
