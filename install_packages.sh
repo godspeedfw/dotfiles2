@@ -56,8 +56,8 @@ install_st () {
 # install yay
 install_yay () {
   pacman -S --needed git base-devel
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
+  git clone https://aur.archlinux.org/yay-bin.git
+  cd yay-bin
   makepkg -si
 }
 
@@ -67,15 +67,14 @@ install_apps () {
   install_cmd "vlc mpv cava ncmpcpp"  # multimedia
   install_cmd "htop dunst pcmanfm lxappearance newsboat android"  # utilities
 
-  if [[ $os_name = "Arch Linux"]]; then
+  if [[ $os_name = "Arch Linux" ]]; then
     install_cmd "vscodium-bin sublime-text-4 android-file-transfer android-tools"
   elif [[ $os_name = "void" ]]; then
     install_cmd "vscode sublime-text4 android-file-transfer-linux android-tools"   # dev stuff
   fi
 
   install_cmd "dhcpcd iwd NetworkManager network-manager-applet"
-}       
-
+  
   if [[ $os_name = "Arch Linux" ]]; then
     install_cmd "sublime-text-4 android-file-transfer android-tools"
   elif [[ $os_name = "void" ]]; then
